@@ -6,12 +6,12 @@ import Searchbar from "./components/Searchbar"
 import Table from "./components/Table"
 import React from 'react'
 
-function App() {
+function App(props) {
 
   const [sortValue, setSortValue] = React.useState('')
   const [dataValue, setDataValue] = React.useState(Employees)
   const [inputValue, setInputValue] = React.useState('')
-  
+
   const handleInput = (event) => {
     event.preventDefault();
     console.log(dataValue)
@@ -23,6 +23,20 @@ function App() {
       setInputValue("")
     }
   }
+
+  React.useEffect(() => {
+    if (inputValue === '') {
+      setDataValue(props.employees);
+      return;
+    }
+    const people = props.employees.filter((person) => {
+      return person.name.toLowerCase().includes(inputValue.toLowerCase());
+    });
+    if (people.length) {
+      setDataValue(people);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [inputValue]);
 
   const handleSortValue = (event) => {
     setDataValue(Employees)
@@ -57,15 +71,15 @@ function App() {
       if (a.email.toLowerCase() > b.email.toLowerCase()) return -1;
       if (a.email.toLowerCase() < b.email.toLowerCase()) return 1;
       return 0;
-    });  
+    });
   } else if (sortValue === "None") {
-    dataValue.sort((a, b) => {      
-      return a.id -b.id;
+    dataValue.sort((a, b) => {
+      return a.id - b.id;
     });
   }
 
   return (
-    <div>
+    <div className="App">
       <Header
         title="Employee Directory"
       />
@@ -75,8 +89,7 @@ function App() {
         handleInputChange={handleInputChange}
       />
       <Dropdown sortValue={sortValue} handleSortValue={handleSortValue} />
-
-      { dataValue ? <Table employees={dataValue} /> : <h3>doesnt compute</h3>}
+      <Table employees={dataValue} />
 
     </div>
   );

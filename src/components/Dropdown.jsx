@@ -1,6 +1,4 @@
 import React from "react"
-import "./Dropdown.css"
-
 
 function Dropdown({ sortValue, handleSortValue }) {
     return (

@@ -1,5 +1,4 @@
 import React from "react"
-import "./Table.css"
 import TableHead from "./TableHead"
 import TableBody from "./TableBody"
 
