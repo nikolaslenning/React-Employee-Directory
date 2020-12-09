@@ -1,6 +1,6 @@
 {
-  "name": "react-employee-directory",
   "homepage": "https://nikolaslenning.github.io/React-Employee-Directory",
+  "name": "react-employee-directory",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
