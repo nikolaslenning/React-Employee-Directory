@@ -1,4 +1,4 @@
-# Budget Anytime
+# React Employee Directory
 ![License](https://img.shields.io/badge/license-ISC-green) ![GitHub top language](https://img.shields.io/github/languages/top/nikolaslenning/React-Employee-Directory)
 
 ![Webpage screenshot](public/screenshot.png)
