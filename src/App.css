@@ -7,6 +7,15 @@ body {
     justify-content: center;
     font-size: calc(10px + 2vmin);
     color: black;
+    
+  }
+
+  h1, label {
+    text-shadow: 2px 1px aqua;
+  }
+
+  thead {
+    text-shadow: 2px 1px teal;
   }
 
   .App {
@@ -62,7 +71,9 @@ body {
     padding: 8px;
   }
 
-  table tr:nth-child(even){background-color: #353b46;}
+  table tr:nth-child(even){background-color: aqua;}
+
+  table tr:nth-child(odd){background-color: teal;}
 
   table tr:hover {background-color: rgb(117, 117, 117);}
   
